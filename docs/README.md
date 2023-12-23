@@ -24,3 +24,12 @@ Seus dados são guardados no servidor, porém para que uma sessão funcione temo
 geralmente cookies de sessão só duram enquanto o navegador estiver aberto em todas as URLs ou gravar um cookie de sessão 
 que é responsável por guardar um id de sessão (uma hash) que é enviado para o servidor que recupera a sessão, recuperando 
 uma informação que está vinculado a uma sessão, com isso a informação não mais fica nos cookies necessariamente.
+
+- Para ler algo que está gravado em uma sessão:
+nome_da_sessao = req.session.nome_da_sessao;
+- Para gravar algo em uma sessão:
+req.session.nome_da_sessao = itemParaSessao;
+
+No final das contas a única diferença entre Cookies e session está que a session salva um id gerado pelo próprio servidor que 
+arremete para os dados que são salvos dentro do backend e não no navegador.
+
