@@ -31,5 +31,6 @@ nome_da_sessao = req.session.nome_da_sessao;
 req.session.nome_da_sessao = itemParaSessao;
 
 No final das contas a única diferença entre Cookies e session está que a session salva um id gerado pelo próprio servidor que 
-arremete para os dados que são salvos dentro do backend e não no navegador.
+arremete para os dados que são salvos dentro do backend e não no navegador. Para autenticação é imprenssindível utilizar o session
+ao invés de salvar dados de login nos cookies
 
