@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+</head>
+<body>
+    <form method="POST" action="/calc">
+        <input type="text" name="number1" />
+        <select name="operation">
+            <option value="sum">+</option>
+            <option value="sub">-</option>
+            <option value="mult">x</option>
+            <option value="div">/</option>
+        </select>
+        <input type="text" name="number2" />
+        <input type="submit" value="calcular"/>
+    </form>
+
+    
+    <% if (!counts.lenght) {%>
+        <h2>Contas</h2>
+        <ul>
+            <% counts.forEach(count => { %>
+                <li>
+                    <%
+                        const operationMap = {
+                            sum: '+',
+                            sub: '-',
+                            mult: 'x',
+                            div: '/'
+                        }
+                    %>
+                    <%= count.number1 %> 
+                    <%= operationMap[count.operation] %> 
+                    <%= count.number2 %> = <%= count.result %>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+    
+    <!-- <%= JSON.stringify(counts) %> -->
+</body>
+</html>

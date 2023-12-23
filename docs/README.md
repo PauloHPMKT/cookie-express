@@ -9,7 +9,8 @@ fazendo esse acesso a cada rota chamamos a aplicação de stateless, pois ela em
 * Cookies:
 ```sh
 # O cookie é um arquivo de texto que fica armazenado na máquina do usuário
-# fluxo:
+# fluxo: uma vez criado cookies eles são enviados para o client (navegador / browser) 
+# é criado um set-Cookie e o mesmo pode ser enviado em uma requisição via headers
 [Coookie] (navegador do usuário) =======> [request]
 ```
 <h5>Promemática</h5>
@@ -19,7 +20,7 @@ armazenar nos cookies informações menos sensíveis.
 </hr>
 
 * Sessão:
-Seus dados são guardados no servidor, porém para que uma sessão funcione temos algumas opções, ou repassar o id da sessão
-em todas as URLs ou gravar um cookie de sessão que é responsável por guardar um id de sessão (uma hash) que é enviado para
-o servidor que recupera a sessão, recuperando uma informação que está vinculado a uma sessão, com isso a informação não mais
-fica nos cookies necessariamente.
+Seus dados são guardados no servidor, porém para que uma sessão funcione temos algumas opções, ou repassar o id da sessão, 
+geralmente cookies de sessão só duram enquanto o navegador estiver aberto em todas as URLs ou gravar um cookie de sessão 
+que é responsável por guardar um id de sessão (uma hash) que é enviado para o servidor que recupera a sessão, recuperando 
+uma informação que está vinculado a uma sessão, com isso a informação não mais fica nos cookies necessariamente.
