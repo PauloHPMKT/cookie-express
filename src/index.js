@@ -88,6 +88,8 @@ app.post('/calc', (request, response) => {
 app.get('/session', (request, response) => {
     let countsInSession = [];
 
+    console.log(request.session.id)
+
     if ('counts' in request.session) {
         countsInSession = request.session['counts'];
     }
@@ -139,7 +141,6 @@ app.post('/calc-session', (request, response) => {
         operation,
         result,
     });
-
     request.session.counts = countsResult;
     response.redirect('/');
 });

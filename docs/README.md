@@ -26,11 +26,16 @@ que é responsável por guardar um id de sessão (uma hash) que é enviado para 
 uma informação que está vinculado a uma sessão, com isso a informação não mais fica nos cookies necessariamente.
 
 - Para ler algo que está gravado em uma sessão:
-nome_da_sessao = req.session.nome_da_sessao;
+<code>nome_da_sessao = req.session.nome_da_sessao;</code>
 - Para gravar algo em uma sessão:
-req.session.nome_da_sessao = itemParaSessao;
+<code>req.session.nome_da_sessao = itemParaSessao;</code>
 
 No final das contas a única diferença entre Cookies e session está que a session salva um id gerado pelo próprio servidor que 
 arremete para os dados que são salvos dentro do backend e não no navegador. Para autenticação é imprenssindível utilizar o session
-ao invés de salvar dados de login nos cookies
+ao invés de salvar dados de login nos cookies.
+
+Importante notar que o id representa uma sessão representa uma aba aberta no browser, caso voce abra uma aba anomina ou feche o navegador 
+será iniciado uma nova sessao, ou seja, será gerado um novo id.
+Modo de estrair o id da sessao:
+<code>req.session.id</code>
 
